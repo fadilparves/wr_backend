@@ -55,6 +55,7 @@ def ms():
     r = []
 
     for _, row in data.iterrows():
+        a = []
         class_1min = ""
         class_5min = ""
         class_15min = ""
@@ -111,23 +112,33 @@ def ms():
             class_shariah = "color-price-down"
         else:
             class_shariah = ""
-            
-        a = """ <tr><td><img src="assets/images/coin/BTC.png" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>
-            <td><span class="">{}</span></td>
-            <td><span class="{}">{}</span></td>
-            <td><span class="{}">{}</span></td>
-            <td><span class="{}">{}</span></td>
-            <td><span class="{}">{}</span></td>
-            <td><span class="{}">{}</span></td>
-            <td><span class="{}">{}</span></td>
-            <td><span class="{}">{}</span></td></tr> """.format(row['Name'], row['Coin'], row['LPrice'],
-                                                                class_1min, row['Trend_1M'], 
-                                                                class_5min, row['Trend_5M'], 
-                                                                class_15min, row['Trend_15M'], 
-                                                                class_1h, row['Trend_H1'], 
-                                                                class_4h, row['Trend_4H'], 
-                                                                class_1d, row['Trend_1D'],
-                                                                class_shariah, row['Shariah Status'])
+   
+        # a = """ <tr><td><img src="assets/images/coin/BTC.png" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>
+        #     <td><span class="">{}</span></td>
+        #     <td><span class="{}">{}</span></td>
+        #     <td><span class="{}">{}</span></td>
+        #     <td><span class="{}">{}</span></td>
+        #     <td><span class="{}">{}</span></td>
+        #     <td><span class="{}">{}</span></td>
+        #     <td><span class="{}">{}</span></td>
+        #     <td><span class="{}">{}</span></td></tr> """.format(row['Name'], row['Coin'], row['LPrice'],
+        #                                                         class_1min, row['Trend_1M'], 
+        #                                                         class_5min, row['Trend_5M'], 
+        #                                                         class_15min, row['Trend_15M'], 
+        #                                                         class_1h, row['Trend_H1'], 
+        #                                                         class_4h, row['Trend_4H'], 
+        #                                                         class_1d, row['Trend_1D'],
+        #                                                         class_shariah, row['Shariah Status'])
+
+        a.append("""<tr><td><img src="assets/images/coin/BTC.png" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>""".format(row['Name'], row['Coin']))
+        a.append("""<td><span class="">{}</span></td>""".format(row['LPrice']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_1min, row['Trend_1M']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_5min, row['Trend_5M']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_15min, row['Trend_15M']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_1h, row['Trend_H1']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_4h, row['Trend_4H']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_1d, row['Trend_1D']))
+        a.append("""<td><span class="{}">{}</span></td>""".format(class_shariah, row['Shariah Status']))
 
         r.append(a)
 
