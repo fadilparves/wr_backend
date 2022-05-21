@@ -112,23 +112,6 @@ def ms():
             class_shariah = "color-price-down"
         else:
             class_shariah = ""
-   
-        # a = """ <tr><td><img src="assets/images/coin/BTC.png" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>
-        #     <td><span class="">{}</span></td>
-        #     <td><span class="{}">{}</span></td>
-        #     <td><span class="{}">{}</span></td>
-        #     <td><span class="{}">{}</span></td>
-        #     <td><span class="{}">{}</span></td>
-        #     <td><span class="{}">{}</span></td>
-        #     <td><span class="{}">{}</span></td>
-        #     <td><span class="{}">{}</span></td></tr> """.format(row['Name'], row['Coin'], row['LPrice'],
-        #                                                         class_1min, row['Trend_1M'], 
-        #                                                         class_5min, row['Trend_5M'], 
-        #                                                         class_15min, row['Trend_15M'], 
-        #                                                         class_1h, row['Trend_H1'], 
-        #                                                         class_4h, row['Trend_4H'], 
-        #                                                         class_1d, row['Trend_1D'],
-        #                                                         class_shariah, row['Shariah Status'])
 
         a.append("""<tr><td><img src="assets/images/coin/BTC.png" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>""".format(row['Name'], row['Coin']))
         a.append("""<td><span class="">{}</span></td>""".format(row['LPrice']))
