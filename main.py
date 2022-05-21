@@ -18,4 +18,25 @@ import pandas as pd
 # df = pd.DataFrame(row, columns=["Coin", "Shariah Status"])
 # df.to_csv("shariah_status.csv", index=False)
 
+min1 = pd.read_csv("./data/min1.csv")
+min5 = pd.read_csv("./data/min5.csv")
+min15 = pd.read_csv("./data/min15.csv")
+h1 = pd.read_csv("./data/h1.csv")
+h4 = pd.read_csv("./data/h4.csv")
+d1 = pd.read_csv("./data/d1.csv")
 
+data = min1.merge(min5, on="Symbol", how='left')
+data = data.merge(min15, on="Symbol", how='left')
+data = data.merge(h1, on="Symbol", how='left')
+data = data.merge(h4, on="Symbol", how='left')
+data = data.merge(d1, on="Symbol", how='left')
+
+data = data[['Symbol', 'Trend_1M', 'Trend_5M', 'Trend_15M', 'Trend_1H', 'Trend_4H', 'Trend_1D']]
+data.fillna(2, inplace=True)
+
+shariah_status = pd.read_csv("./data/shariah_status.csv")
+data = data.merge(shariah_status, on='Coin', how='left')
+
+data['Shariah Status'].fillna('Grey', inplace=True)
+
+print(data)

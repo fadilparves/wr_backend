@@ -45,6 +45,8 @@ for r in resp['data']:
             symbol = r['sc']
             tap = r['tap']
             tpp = r['tpp']
+            coin = r['bcdn']
+            name = r['dn']
             print("Symbol: {}".format(symbol))
             # 1 minute part
             try:
@@ -87,11 +89,11 @@ for r in resp['data']:
                     laststate, last_a_price_after_d, downprice, upprice = market_structure(True, symbol, data, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                                                                     0, 0, False, False, 0, 0.0, 0.0, 0.0)
 
-                    min1.append([symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
+                    min1.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
                                 downprice, upprice])
                 else:
-                    min1.append([symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    min1.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
@@ -138,11 +140,11 @@ for r in resp['data']:
                     laststate, last_a_price_after_d, downprice, upprice = market_structure(True, symbol, data, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                                                                     0, 0, False, False, 0, 0.0, 0.0, 0.0)
 
-                    min5.append([symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
+                    min5.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
                                 downprice, upprice])
                 else:
-                    min5.append([symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    min5.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
@@ -189,11 +191,11 @@ for r in resp['data']:
                     laststate, last_a_price_after_d, downprice, upprice = market_structure(True, symbol, data, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                                                                     0, 0, False, False, 0, 0.0, 0.0, 0.0)
 
-                    min15.append([symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
+                    min15.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
                                 downprice, upprice])
                 else:
-                    min15.append([symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    min15.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
@@ -240,11 +242,11 @@ for r in resp['data']:
                     laststate, last_a_price_after_d, downprice, upprice = market_structure(True, symbol, data, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                                                                     0, 0, False, False, 0, 0.0, 0.0, 0.0)
 
-                    h1.append([symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
+                    h1.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
                                 downprice, upprice])
                 else:
-                    h1.append([symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    h1.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
@@ -291,11 +293,11 @@ for r in resp['data']:
                     laststate, last_a_price_after_d, downprice, upprice = market_structure(True, symbol, data, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                                                                     0, 0, False, False, 0, 0.0, 0.0, 0.0)
 
-                    h4.append([symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
+                    h4.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
                                 downprice, upprice])
                 else:
-                    h4.append([symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    h4.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
@@ -342,47 +344,47 @@ for r in resp['data']:
                     laststate, last_a_price_after_d, downprice, upprice = market_structure(True, symbol, data, 0, 0.0, 0.0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
                                                                     0, 0, False, False, 0, 0.0, 0.0, 0.0)
 
-                    d1.append([symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
+                    d1.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
                                 downprice, upprice])
                 else:
-                    d1.append([symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    d1.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
                 continue
 
-df = pd.DataFrame(m1, columns=['Symbol', 'PCoin', 'PPrice', 'Trend_1M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+df = pd.DataFrame(min1, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_1M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice'])
 
 df.to_csv("./data/1m.csv", index=False)
 
-df = pd.DataFrame(m5, columns=['Symbol', 'PCoin', 'PPrice', 'Trend_5M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+df = pd.DataFrame(min5, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_5M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice'])
 
 df.to_csv("./data/5m.csv", index=False)
 
-df = pd.DataFrame(m15, columns=['Symbol', 'PCoin', 'PPrice', 'Trend_15M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+df = pd.DataFrame(min15, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_15M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice'])
 
 df.to_csv("./data/15m.csv", index=False)
 
-df = pd.DataFrame(h1, columns=['Symbol', 'PCoin', 'PPrice', 'Trend_H1', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+df = pd.DataFrame(h1, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_H1', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice'])
 
 df.to_csv("./data/1h.csv", index=False)
 
-df = pd.DataFrame(h4, columns=['Symbol', 'PCoin', 'PPrice', 'Trend_4H', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+df = pd.DataFrame(h4, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_4H', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice'])
 
 df.to_csv("./data/4h.csv", index=False)
 
-df = pd.DataFrame(d1, columns=['Symbol', 'PCoin', 'PPrice', 'Trend_1D', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+df = pd.DataFrame(d1, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_1D', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice'])
 
