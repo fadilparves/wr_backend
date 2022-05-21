@@ -91,9 +91,9 @@ for r in resp['data']:
 
                     min1.append([coin, name, symbol, tap, tpp, ms_trend, c_buy, c_sell, wave_count_up, wave_count_down, wave_count_up_after_d, wave_count_down_after_d, 
                                 upper, lower, a_up, a_down, b_up, b_down, c_up, c_down, d_up, d_down, ms_buy, ms_sell, laststate, last_a_price_after_d,
-                                downprice, upprice])
+                                downprice, upprice, data.iloc[-1]['Close']])
                 else:
-                    min1.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0])
+                    min1.append([coin, name, symbol, tap, tpp, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, False, False, 0, 0.0, 0.0, 0.0, 0.0])
 
             except Exception as e:
                 print(e)
