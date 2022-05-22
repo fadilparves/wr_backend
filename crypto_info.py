@@ -3,6 +3,7 @@ from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 import pandas as pd
+from privateconfig import coinmarketcap_key
 
 rng = [1, 5001, 10001, 15001, 20001, 25001, 30001, 35001, 40001, 45001, 55001, 60001, 65001, 70001, 75001, 80001, 85001, 90001, 95001, 100000]
 
@@ -16,7 +17,7 @@ for r in rng:
 
     headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': '65cd29ec-9372-4188-8cd4-7e1583b5c336',
+    'X-CMC_PRO_API_KEY': coinmarketcap_key,
     }
 
     session = Session()
