@@ -42,4 +42,4 @@ for r in rng:
     
 df = pd.concat(rum, axis=0)
 df.drop_duplicates(subset=['ID', 'Coin'], keep='first', inplace=True)
-df.to_csv("mapping.csv", index=False)
+df.to_csv("./data/mapping.csv", index=False)

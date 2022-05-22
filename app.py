@@ -13,7 +13,7 @@ def ms():
     h1 = pd.read_csv("./data/1h.csv")
     h4 = pd.read_csv("./data/4h.csv")
     d1 = pd.read_csv("./data/1d.csv")
-    mapping = pd.read_csv("mapping.csv")
+    mapping = pd.read_csv("./data/mapping.csv")
 
     data = min1.merge(min5[['Symbol','Trend_5M']], on="Symbol", how='left')
     data = data.merge(min15[['Symbol','Trend_15M']], on="Symbol", how='left')
