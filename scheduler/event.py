@@ -2,7 +2,7 @@ from pytz import timezone
 from datetime import datetime
 from multiprocess import Process
 
-from simple_scheduler.base import Schedule
+from scheduler.base import Schedule
 
 class Event(Schedule):
     """ Event occurs at an exact time.
