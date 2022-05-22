@@ -13,6 +13,7 @@ def ms():
     h1 = pd.read_csv("./data/1h.csv")
     h4 = pd.read_csv("./data/4h.csv")
     d1 = pd.read_csv("./data/1d.csv")
+    mapping = pd.read_csv("mapping.csv")
 
     data = min1.merge(min5[['Symbol','Trend_5M']], on="Symbol", how='left')
     data = data.merge(min15[['Symbol','Trend_15M']], on="Symbol", how='left')
@@ -113,7 +114,18 @@ def ms():
         else:
             class_shariah = ""
 
-        a.append("""<tr><td><img src="assets/images/coin/BTC.png" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>""".format(row['Name'], row['Coin']))
+        temp = mapping[mapping['Coin'] == row['Coin']]
+
+        if len(temp) > 0:
+            img_src = "https://s2.coinmarketcap.com/static/img/coins/64x64/{}.png".format(temp.iloc[0]['ID'])
+        else:
+            temp = mapping[mapping['Coin'].str.contains(row['Coin'])]
+            if len(temp) > 0:
+                img_src = "https://s2.coinmarketcap.com/static/img/coins/64x64/{}.png".format(temp.iloc[0]['ID'])
+            else:
+                img_src = "assets/images/coin/BTC.png"
+
+        a.append("""<tr><td><img src="{}" alt="" class="img-fluid avatar mx-1"><span class="text-uppercase fw-bold"> {} </span> <span class="text-muted"> {}</span></td>""".format(img_src, row['Name'], row['Coin']))
         a.append("""<td><span class="">{}</span></td>""".format(row['LPrice']))
         a.append("""<td><span class="{}">{}</span></td>""".format(class_1min, row['Trend_1M']))
         a.append("""<td><span class="{}">{}</span></td>""".format(class_5min, row['Trend_5M']))
