@@ -5,7 +5,7 @@ __pycache__/
 privateconfig.py
 # C extensions
 *.so
-
+nohup.out
 # Distribution / packaging
 .Python
 build/
