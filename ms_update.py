@@ -23,6 +23,7 @@ def generate_sign(method, base_uri, endpoint, params, secret_key):
     return signature
 
 def update_ms(tf, stf, ttf):
+    print(tf, stf, ttf, datetime.now(pytz.timezone('Asia/Kuala_Lumpur')))
     base_uri = 'api-aws.huobi.pro'
     mkt_skt = pd.read_csv("./data/{}.csv".format(stf))
     rows_data = []
