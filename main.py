@@ -10,19 +10,19 @@ print("Scheduler Started")
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=60,
-                            start="May 23 12:35:00 2022",
+                            start="May 23 12:57:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'1min', "stf": "1m", "ttf": 'Trend_1M'})
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=300,
-                            start="May 23 12:35:00 2022",
+                            start="May 23 12:55:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'5min', "stf": "5m", "ttf": 'Trend_5M'})
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=900,
-                            start="May 23 12:45:00 2022",
+                            start="May 23 13:00:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'15min', "stf": "15m", "ttf": 'Trend_15M'})
 

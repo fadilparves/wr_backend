@@ -92,7 +92,7 @@ def update_ms(tf, stf, ttf):
             print(e)
             continue
     
-    df = pd.DataFrame(rows_data, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', 'Trend_1M', 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
+    df = pd.DataFrame(rows_data, columns=['Coin', 'Name', 'Symbol', 'PCoin', 'PPrice', '{}'.format(ttf), 'CBuy', 'CSell', 'WaveCountUp', 'WaveCountDown', 'WaveCountUpAfterD', 'WaveCountDownAfterD', 
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice', 'LPrice'])
 
