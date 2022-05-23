@@ -10,7 +10,7 @@ print("Scheduler Started")
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=60,
-                            start="May 23 12:57:00 2022",
+                            start="May 23 12:54:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'1min', "stf": "1m", "ttf": 'Trend_1M'})
 
