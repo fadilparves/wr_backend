@@ -11,6 +11,7 @@ import pandas as pd
 import pytz
 import math
 import random
+from dbconn import connect
 
 def generate_sign(method, base_uri, endpoint, params, secret_key):
     '''
@@ -24,6 +25,7 @@ def generate_sign(method, base_uri, endpoint, params, secret_key):
 
 def update_ms(tf, stf, ttf):
     print(tf, stf, ttf, datetime.now(pytz.timezone('Asia/Kuala_Lumpur')))
+    conn = connect()
     base_uri = 'api-aws.huobi.pro'
     mkt_skt = pd.read_csv("./data/{}.csv".format(stf))
     rows_data = []
@@ -96,4 +98,5 @@ def update_ms(tf, stf, ttf):
                                 'Upper', 'Lower', 'AUp', 'ADown', 'BUp', 'BDown', 'CUp', 'CDown', 'DUp', 'DDown', 'MSBuy', 'MSSell', 
                                 'LastState', 'LastAPriceAfterD', 'DownPrice', 'UpPrice', 'LPrice'])
 
-    df.to_csv("./data/{}.csv".format(stf), index=False)
+    # df.to_csv("./data/{}.csv".format(stf), index=False)
+    df.to_sql(stf, if_exists='replace', con=conn, index=False)
