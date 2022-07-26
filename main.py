@@ -8,17 +8,17 @@ from ms_update import update_ms
 
 print("Scheduler Started")
 
-recurring_scheduler.add_job(target=update_ms,
-                            period_in_seconds=60,
-                            start="May 23 12:54:00 2022",
-                            tz="Asia/Kuala_Lumpur",
-                            kwargs={"tf":'1min', "stf": "1m", "ttf": 'Trend_1M'})
+# recurring_scheduler.add_job(target=update_ms,
+#                             period_in_seconds=60,
+#                             start="May 23 12:54:00 2022",
+#                             tz="Asia/Kuala_Lumpur",
+#                             kwargs={"tf":'1min', "stf": "1m", "ttf": 'Trend_1M'})
 
-recurring_scheduler.add_job(target=update_ms,
-                            period_in_seconds=300,
-                            start="May 23 12:55:00 2022",
-                            tz="Asia/Kuala_Lumpur",
-                            kwargs={"tf":'5min', "stf": "5m", "ttf": 'Trend_5M'})
+# recurring_scheduler.add_job(target=update_ms,
+#                             period_in_seconds=300,
+#                             start="May 23 12:55:00 2022",
+#                             tz="Asia/Kuala_Lumpur",
+#                             kwargs={"tf":'5min', "stf": "5m", "ttf": 'Trend_5M'})
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=900,
@@ -32,11 +32,11 @@ recurring_scheduler.add_job(target=update_ms,
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'60min', "stf": "1h", "ttf": 'Trend_H1'})
 
-recurring_scheduler.add_job(target=update_ms,
-                            period_in_seconds=14400,
-                            start="May 23 16:00:00 2022",
-                            tz="Asia/Kuala_Lumpur",
-                            kwargs={"tf":'4hour', "stf": "4h", "ttf": 'Trend_4H'})
+# recurring_scheduler.add_job(target=update_ms,
+#                             period_in_seconds=14400,
+#                             start="May 23 16:00:00 2022",
+#                             tz="Asia/Kuala_Lumpur",
+#                             kwargs={"tf":'4hour', "stf": "4h", "ttf": 'Trend_4H'})
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=86400,
