@@ -27,7 +27,7 @@ def update_ms(tf, stf, ttf):
     print(tf, stf, ttf, datetime.now(pytz.timezone('Asia/Kuala_Lumpur')))
     conn = connect()
     base_uri = 'api-aws.huobi.pro'
-    mkt_skt = pd.read_sql(""" select * from {} """.format(stf))
+    mkt_skt = pd.read_sql(""" select * from {} """.format(stf), con=conn)
     rows_data = []
     for _, mkt in mkt_skt.iterrows():
         symbol = mkt['Symbol']
