@@ -22,13 +22,13 @@ print("Scheduler Started")
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=900,
-                            start="May 23 13:00:00 2022",
+                            start="Jul 26 18:00:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'15min', "stf": "15m", "ttf": 'Trend_15M'})
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=3600,
-                            start="May 23 13:00:00 2022",
+                            start="Jul 26 18:00:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'60min', "stf": "1h", "ttf": 'Trend_H1'})
 
@@ -40,18 +40,18 @@ recurring_scheduler.add_job(target=update_ms,
 
 recurring_scheduler.add_job(target=update_ms,
                             period_in_seconds=86400,
-                            start="May 24 00:00:00 2022",
+                            start="Jul 27 00:00:00 2022",
                             tz="Asia/Kuala_Lumpur",
                             kwargs={"tf":'1day', "stf": "1d", "ttf": 'Trend_1D'})
 
 recurring_scheduler.add_job(target=crypto_info,
                             period_in_seconds=2628000,
-                            start="Jun 01 00:00:00 2022",
+                            start="Aug 01 00:00:00 2022",
                             tz="Asia/Kuala_Lumpur")
 
 recurring_scheduler.add_job(target=shariah_status,
                             period_in_seconds=2628000,
-                            start="Jun 01 00:05:00 2022",
+                            start="Aug 01 00:05:00 2022",
                             tz="Asia/Kuala_Lumpur")
 
 recurring_scheduler.run()
