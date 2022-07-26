@@ -4,8 +4,10 @@ from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import json
 import pandas as pd
 from privateconfig import coinmarketcap_key
+from dbconn import connect
 
 def crypto_info():
+    conn = connect()
     rng = [1, 5001, 10001, 15001, 20001, 25001, 30001, 35001, 40001, 45001, 55001, 60001, 65001, 70001, 75001, 80001, 85001, 90001, 95001, 100000]
 
     rum = []
@@ -44,4 +46,5 @@ def crypto_info():
         
     df = pd.concat(rum, axis=0)
     df.drop_duplicates(subset=['ID', 'Coin'], keep='first', inplace=True)
-    df.to_csv("./data/mapping.csv", index=False)
+    # df.to_csv("./data/mapping.csv", index=False)
+    df.to_sql("mapping_coins", if_exists='replace', con=conn, index=False)
