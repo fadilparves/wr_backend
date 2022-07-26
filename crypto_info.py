@@ -48,4 +48,3 @@ def crypto_info():
     df.drop_duplicates(subset=['ID', 'Coin', 'Icon'], keep='first', inplace=True)
     # df.to_csv("./data/mapping.csv", index=False)
     df.to_sql("mapping_coins", if_exists='replace', con=conn, index=False)
-
