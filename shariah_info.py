@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+from dbconn import connect
 
 def shariah_status():
+    conn = connect()
     URL = "https://sharlife.my/crypto-shariah"
     page = requests.get(URL)
 
@@ -17,4 +19,5 @@ def shariah_status():
         row.append([coin_name.text.strip(), shariah_status.text.strip()])
 
     df = pd.DataFrame(row, columns=["Coin", "Shariah Status"])
-    df.to_csv("shariah_status.csv", index=False)
+    # df.to_csv("shariah_status.csv", index=False)
+    df.to_sql("shariah_status", if_exists='replace', con=conn, index=False)

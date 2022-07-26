@@ -34,17 +34,18 @@ def crypto_info():
             if 'data' in data:
                 print(start)
                 for d in data['data']:
-                    row.append([d['id'], d['symbol']])
+                    row.append([d['id'], d['symbol'], "https://s2.coinmarketcap.com/static/img/coins/64x64/{}.png".format(d['id'])])
             else:
                 break
 
         except (ConnectionError, Timeout, TooManyRedirects) as e:
             print(e)
 
-        df = pd.DataFrame(row, columns=["ID", "Coin"])
+        df = pd.DataFrame(row, columns=["ID", "Coin", "Icon"])
         rum.append(df)
         
     df = pd.concat(rum, axis=0)
-    df.drop_duplicates(subset=['ID', 'Coin'], keep='first', inplace=True)
+    df.drop_duplicates(subset=['ID', 'Coin', 'Icon'], keep='first', inplace=True)
     # df.to_csv("./data/mapping.csv", index=False)
     df.to_sql("mapping_coins", if_exists='replace', con=conn, index=False)
+
